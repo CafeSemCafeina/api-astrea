@@ -10,12 +10,14 @@ Os campos de organização são globais. Uma alteração de nome, logo, cabeçal
 
 O fundo oficial para este guia é `paper`, `#f4f0ea`. Ele substitui o fundo provisório `#F5F7FA` usado no plano anterior. Os papéis de apoio são `paper-light` (`#faf8f4`), `ink` (`#211b25`), `purple-600` (`#673981`) e `purple-700` (`#4b295e`). A tipografia de referência é Source Serif 4 para tese e destaque, Inter para corpo e controles, e JetBrains Mono para metadados.
 
-As fontes estão fixadas no commit `9381d1b4f81c62ab7d45fcec533516cf80547cb3` do repositório canônico:
+As referências abaixo estão fixadas no commit publicado `b09c58894a21996927aaa1f6bc0911ff0f459db7` do repositório canônico e foram verificadas pela API GitHub autenticada em 06/10/2026. O repositório é privado e requer acesso autorizado.
 
-- [Resumo de identidade](https://github.com/Syntelix-AI/syntelix-web/blob/9381d1b4f81c62ab7d45fcec533516cf80547cb3/docs/DESIGN.md)
-- [Sistema de design](https://github.com/Syntelix-AI/syntelix-web/blob/9381d1b4f81c62ab7d45fcec533516cf80547cb3/DESIGN.md)
-- [Tokens implementados](https://github.com/Syntelix-AI/syntelix-web/blob/9381d1b4f81c62ab7d45fcec533516cf80547cb3/app/app.css)
-- [Logo oficial no commit de origem](https://github.com/Syntelix-AI/syntelix-web/blob/9381d1b4f81c62ab7d45fcec533516cf80547cb3/public/brand/syntelix-logo.png)
+- [Resumo de identidade](https://github.com/Syntelix-AI/syntelix-web/blob/b09c58894a21996927aaa1f6bc0911ff0f459db7/docs/DESIGN.md)
+- [Sistema de design](https://github.com/Syntelix-AI/syntelix-web/blob/b09c58894a21996927aaa1f6bc0911ff0f459db7/DESIGN.md)
+- [Tokens implementados](https://github.com/Syntelix-AI/syntelix-web/blob/b09c58894a21996927aaa1f6bc0911ff0f459db7/app/app.css)
+- [Logo oficial na referência publicada](https://github.com/Syntelix-AI/syntelix-web/blob/b09c58894a21996927aaa1f6bc0911ff0f459db7/public/brand/syntelix-logo.png)
+
+A consulta original usou o commit local `9381d1b4f81c62ab7d45fcec533516cf80547cb3`, indisponível no GitHub. Os quatro arquivos acima têm os mesmos blobs Git nos dois commits; a referência publicada preserva integralmente os documentos, tokens e logo consultados. Nenhum commit do projeto de origem foi publicado por este pacote.
 
 Use o [logo local da documentação](assets/brand/syntelix-logo.png) como o ativo aprovado para revisão. O arquivo deve manter o SHA-256 `9d4d7757529237e971e84c2f12182a8a9ad48d40f5eb10c0bf1b222515992b15`. Copiar o arquivo para este repositório não publica uma URL de logo. O painel precisa confirmar a URL de ativo aprovada, o tamanho, o formato e os limites de texto aceitos pelo campo nativo.
 
@@ -108,6 +110,8 @@ Todos os casos abaixo estão planejados. Nenhum caso foi executado por este paco
 | Endereço não autorizado | Continuar negado. A tela genérica de envio pode aparecer, mas não prova entrega e não exige bloqueio imediato. |
 | Código expirado | Rejeitar o código após dez minutos e permitir uma nova tentativa controlada. |
 | Código reenviado | Rejeitar o código anterior e aceitar somente o código novo válido. Não registrar os valores. |
+| PIN já consumido | Se a implantação externa efetiva usar OTP, rejeitar a reutilização de um PIN já consumido. Registrar como inaplicável se o mecanismo implantado não usar OTP. Não registrar o valor. |
+| Expiração independente | O `main` deste worktree oferece API-key em `/mcp` e não implementa Access ou OAuth. Se uma implantação externa efetiva adicionar camadas Access e OAuth/MCP independentes, testar Access expirado com OAuth/MCP válido e o inverso. Registrar como inaplicável enquanto essas camadas não existirem ou não forem independentes. |
 | Login completo | Retornar ao cliente correto, mostrar estado conectado e executar uma consulta de leitura sem alterar dados. |
 | Fluxo interrompido | Cancelar ou fechar o fluxo, reiniciar pelo cliente e confirmar que nenhum acesso foi concedido por engano. |
 | Apresentação | Conferir logo, contraste, teclado e viewport estreito no preview nativo. |
