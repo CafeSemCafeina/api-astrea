@@ -68,6 +68,8 @@ Todas as rotas `/api/*` e `/mcp` requerem header `x-api-key` com o valor definid
 
 O projeto mantém o servidor MCP em `stdio` para integrações locais e também expõe um endpoint HTTP remoto em `/mcp`.
 
+Para a apresentação nativa do Access e o roteiro de reconexão, consulte o [guia versionado de aparência e reconexão do Cloudflare Access](docs/cloudflare-access-reconexao.md). Ele não aplica mudanças no painel.
+
 - URL: `POST/GET/DELETE /mcp`
 - Transporte: `Streamable HTTP`
 - Header obrigatório: `x-api-key: <API_KEY>`
